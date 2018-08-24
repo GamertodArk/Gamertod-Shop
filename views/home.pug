@@ -1,0 +1,60 @@
+extends layout
+
+block header
+		.slider#header-slider
+			.image-1.image
+				h2 Todo en un lugar
+				p Los mejores productos para cubrir tus necesidades en un solo lugar
+			.image-2.image
+				h2 ¿Te gusta leer?
+				p Ejercita tu mente con los libros mas interesantes a precios accesibles
+			.image-3.image
+				h2 Desde cualquier lugar
+				p Compra, vende y recibe lo que quieras desde cualquier lugar del mundo
+block content
+	main
+		.latest-items
+			.title
+				h2 Articulos mas recientes
+				hr
+			.items
+				.item-1.item
+					.overlay
+						h2 Hello world
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nobis sequi mollitia, deleniti nesciunt ullam?
+				.item-2.item
+					.overlay
+						h2 Hello world
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nobis sequi mollitia, deleniti nesciunt ullam?
+				.item-3.item
+					.overlay
+						h2 Hello world
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nobis sequi mollitia, deleniti nesciunt ullam?
+				.item-4.item
+					.overlay
+						h2 Hello world
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nobis sequi mollitia, deleniti nesciunt ullam?
+				.item-5.item
+					.overlay
+						h2 Hello world
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nobis sequi mollitia, deleniti nesciunt ullam?
+				.item-6.item
+					.overlay
+						h2 Hello world
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nobis sequi mollitia, deleniti nesciunt ullam?
+block head
+	link(rel="stylesheet", href="/stylesheets/css/home_styles.css")
+	link(rel="stylesheet", href="/stylesheets/css/sss.css")
+
+block out-body
+	//- Include jquery
+	script(src="/javascript/jquery-1.12.4.min.js")
+	script(src="/javascript/sss.min.js")
+	script.
+		$('#header-slider').sss({
+			slideShow : true, 
+			startOn : 0,
+			transition : 400,
+			speed : 3500,
+			showNav : true
+		});

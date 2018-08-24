@@ -1,0 +1,42 @@
+@import "partials/base";
+
+html, body, main {
+	height: 95%;
+}
+
+main {
+	width: 100%;
+	padding: 2em;
+	@include center-flex;
+
+	form {
+		width: 40%;
+		margin: auto;
+
+		input[type=text],
+		input[type="password"] {
+			width: 100%;
+			padding: 5px;
+			display: block;
+			margin-bottom: 2em;
+		}
+
+		input[type="submit"] {
+			margin: auto;
+			display: block;
+			@include button-1-styles(200px);
+		}
+
+		.link {
+			font-size: 14pt;
+			margin-top: 2em;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 23pt;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+	}
+}

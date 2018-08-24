@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, label, p {
+  font-family: Roboto, Arial, Helvetica, sans-serif, serif;
+}
+
+footer {
+  width: 100%;
+  color: #ffffff;
+  padding: 2em 1em;
+  text-align: center;
+  background-color: #2f2e2e;
+}
+
+.navigation_menu {
+  width: 100%;
+  background-color: #2f2e2e;
+}
+.navigation_menu nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  padding: 1em 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation_menu nav a {
+  color: #fff;
+  text-decoration: none;
+  font-family: Roboto, Arial, Helvetica, serif, sans-serif;
+}
+.navigation_menu nav .logo a {
+  font-size: 20pt;
+}
+.navigation_menu nav .menu a,
+.navigation_menu nav .login a {
+  padding: 10px;
+  text-transform: uppercase;
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  -o-transition-delay: 0.1s;
+  -o-transition-duration: 0.2s;
+  -o-transition-property: color;
+  -o-transition-timing-function: ease-out;
+  -moz-transition-delay: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -moz-transition-property: color;
+  -moz-transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.1s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: color;
+  -webkit-transition-timing-function: ease-out;
+}
+.navigation_menu nav .menu a:hover,
+.navigation_menu nav .login a:hover {
+  color: #b0aaa9;
+}
+
+html, body, main {
+  height: 95%;
+}
+
+main {
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main form {
+  width: 40%;
+  margin: auto;
+}
+main form input[type=text],
+main form input[type=password] {
+  width: 100%;
+  padding: 5px;
+  display: block;
+  margin-bottom: 2em;
+}
+main form input[type=submit] {
+  margin: auto;
+  display: block;
+  border: none;
+  width: 200px;
+  font-size: 17px;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #2f2e2e;
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  -o-transition-delay: 0.1s;
+  -o-transition-duration: 0.2s;
+  -o-transition-property: color;
+  -o-transition-timing-function: ease-out;
+  -moz-transition-delay: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -moz-transition-property: color;
+  -moz-transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.1s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: color;
+  -webkit-transition-timing-function: ease-out;
+}
+main form input[type=submit]:hover {
+  cursor: pointer;
+  color: #b0aaa9;
+}
+main form .link {
+  font-size: 14pt;
+  margin-top: 2em;
+  text-align: center;
+}
+main form h2 {
+  font-size: 23pt;
+  text-align: center;
+  margin-bottom: 1em;
+}

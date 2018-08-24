@@ -1,0 +1,27 @@
+// Global variables
+$image_url: '../../images/';
+
+// font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Global Styles
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1,h2,h3, label, p, {
+	font-family: Roboto, Arial, Helvetica, sans-serif, serif;
+}
+
+// Include all modules
+@import "../modules/all";
+
+// Footer Styles
+@import "footer";
+
+// Nav styles
+@import "header";

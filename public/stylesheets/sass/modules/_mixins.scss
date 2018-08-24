@@ -1,0 +1,47 @@
+// center items usin flex
+@mixin center-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Transition
+@mixin transition($duration, $property, $timing_function, $delay) {
+	transition-delay: $delay;
+	transition-duration: $duration;
+	transition-property: $property;
+	transition-timing-function: $timing_function;
+
+	-o-transition-delay: $delay;
+	-o-transition-duration: $duration;
+	-o-transition-property: $property;
+	-o-transition-timing-function: $timing_function;
+
+	-moz-transition-delay: $delay;
+	-moz-transition-duration: $duration;
+	-moz-transition-property: $property;
+	-moz-transition-timing-function: $timing_function;
+
+	-webkit-transition-delay: $delay;
+	-webkit-transition-duration: $duration;
+	-webkit-transition-property: $property;
+	-webkit-transition-timing-function: $timing_function;
+}
+
+// Button 1 styles
+@mixin button-1-styles($width) {
+	border: none;
+	width: $width;
+	font-size: 17px;
+	padding: 0.5em 1em;
+	color: $btn_1_font;
+	border-radius: 5px;
+	background-color: $btn_1_bg;
+	@include transition(0.2s, color, ease-out, 0.1s);
+
+
+	&:hover {
+		cursor: pointer;
+		color: $btn_1_hover_font;
+	}
+}
