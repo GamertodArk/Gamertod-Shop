@@ -1,0 +1,40 @@
+@import "partials/base";
+
+main {
+	
+
+	form {
+		width: 60%;
+		margin: auto;
+
+		h2 {
+			margin: 1em 0px;
+			text-align: center;
+		}
+
+		.full_name {
+			width: 100%;
+			padding-bottom: 1em;
+
+			display: flex;
+			align-items: center;
+
+			> div {
+				flex: 1;
+
+				input[type=text]{
+					width: 100%;
+					padding: 5px;
+					display: block;
+				}
+			}
+		}
+
+		.input {
+			width: 100%;
+			padding: 5px;
+			display: block;
+			margin-bottom: 1em;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+extends layout
+
+block content
+	main
+		form
+			h2 Registrate
+
+			.full_name
+				.name
+					label(for="name") Nombre
+					input(type="text", name="name", id="name", placeholder="Nombre")
+
+				.last_name
+					label(for="last_name") Apellido
+					input(type="text", name="last_name", id="last_name", placeholder="Apellido")
+			
+			label(for="username") Usuario
+			input(type="text", class="input", name="username", id="username", placeholder="Usuario")
+
+
+			label(for="email") Email
+			input(type="email", class="input", name="email", id="email", placeholder="Email")
+
+			label(for="password") Contraseña
+			input(type="password", class="input", name="password", id="password", placeholder="Contraseña")
+
+			label(for="password2") Repita su contraseña
+			input(type="password", class="input", name="password2", id="password2", placeholder="Repita su contraseña")
+
+			label(for="country") Pais de recidencia
+			select(class="input" ,name="country", id="country")
+				option(value="") Seleciona un pais
+				option(value="Venezuela") Venezuela
+				option(value="Colombia") Colombia
+
+			label(for="gender") Genero
+			select(class="input", name="gender", id="gender")
+				option(value="Mujer") Mujer
+				option(value="Hombre") Hombre
+block head
+	link(rel="stylesheet", href="/stylesheets/css/signup_styles.css")
