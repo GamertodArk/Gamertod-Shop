@@ -1,13 +1,19 @@
 @import "partials/base";
 
+html, body, main {
+	height: 100%;
+	min-height: 100%;
+}
+
 main {
-	
+	@include center-flex;
 
 	form {
 		width: 60%;
 		margin: auto;
 
 		h2 {
+			font-size: 30pt;
 			margin: 1em 0px;
 			text-align: center;
 		}
@@ -35,6 +41,23 @@ main {
 			padding: 5px;
 			display: block;
 			margin-bottom: 1em;
+		}
+
+		.birth_date {
+			> div {
+				display: inline-block;
+
+				select {
+					width: 100px;
+					margin: 0px 0.5em;
+				}
+			}
+		}
+
+		input[type=submit] { 
+			display: block;
+			margin: 1.5em auto;
+			@include button-1-styles(150px);
 		}
 	}
 }

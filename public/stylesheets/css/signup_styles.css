@@ -62,11 +62,22 @@ footer {
   color: #b0aaa9;
 }
 
+html, body, main {
+  height: 100%;
+  min-height: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 main form {
   width: 60%;
   margin: auto;
 }
 main form h2 {
+  font-size: 30pt;
   margin: 1em 0px;
   text-align: center;
 }
@@ -89,4 +100,42 @@ main form .input {
   padding: 5px;
   display: block;
   margin-bottom: 1em;
+}
+main form .birth_date > div {
+  display: inline-block;
+}
+main form .birth_date > div select {
+  width: 100px;
+  margin: 0px 0.5em;
+}
+main form input[type=submit] {
+  display: block;
+  margin: 1.5em auto;
+  border: none;
+  width: 150px;
+  font-size: 17px;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #2f2e2e;
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  -o-transition-delay: 0.1s;
+  -o-transition-duration: 0.2s;
+  -o-transition-property: color;
+  -o-transition-timing-function: ease-out;
+  -moz-transition-delay: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -moz-transition-property: color;
+  -moz-transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.1s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: color;
+  -webkit-transition-timing-function: ease-out;
+}
+main form input[type=submit]:hover {
+  cursor: pointer;
+  color: #b0aaa9;
 }

@@ -37,5 +37,25 @@ block content
 			select(class="input", name="gender", id="gender")
 				option(value="Mujer") Mujer
 				option(value="Hombre") Hombre
+
+			label(for="") Fecha de nacimiento
+			.birth_date
+				.day
+					select(name="b_day")
+						option(value="1") 1				
+						option(value="2") 2				
+						option(value="3") 3
+				.month
+					select(name="b_month")
+						option(value="1") Enero
+						option(value="2") Febrero
+						option(value="3") Marzo
+				.year 
+					select(name="b_year")
+						option(value="2018") 2018
+						option(value="2017") 2017
+						option(value="2016") 2016
+
+			input(type="submit", value="Registrarse")
 block head
 	link(rel="stylesheet", href="/stylesheets/css/signup_styles.css")
