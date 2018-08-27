@@ -15,6 +15,7 @@
     "express": "*",
     "body-parser": "*",
     "cookie-parser": "*",
-    "connect-flash": "*"
+    "connect-flash": "*",
+    "express-validator": "*"
   }
 }

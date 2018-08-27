@@ -2,9 +2,15 @@ const path = require('path');
 const express = require('express');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const expressValidator = require('express-validator');
 
 // Init app
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+app.use(expressValidator());
 
 // View engine
 app.set('view engine', 'pug');

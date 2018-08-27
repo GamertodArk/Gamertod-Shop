@@ -2,16 +2,16 @@ extends layout
 
 block content
 	main
-		form
+		form(method="POST", action="")
 			h2 Registrate
 
 			.full_name
 				.name
-					label(for="name") Nombre
+					label(id="name_input", for="name") Nombre
 					input(type="text", name="name", id="name", placeholder="Nombre")
 
 				.last_name
-					label(for="last_name") Apellido
+					label(id="lastName_input", for="last_name") Apellido
 					input(type="text", name="last_name", id="last_name", placeholder="Apellido")
 			
 			label(for="username") Usuario
@@ -59,3 +59,13 @@ block content
 			input(type="submit", value="Registrarse")
 block head
 	link(rel="stylesheet", href="/stylesheets/css/signup_styles.css")
+
+block out-body
+	script(src="/javascript/ajax.class.js")
+	script.
+		var ajax = new Ajax('users/check');
+		ajax.test();
+
+	if errors
+		script.
+			console.log(#{errors});
