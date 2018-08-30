@@ -41,31 +41,25 @@ block content
 			label(for="") Fecha de nacimiento
 			.birth_date
 				.day
-					select(name="b_day")
+					select(id="b_day", name="b_day")
 						option(value="1") 1				
 						option(value="2") 2				
 						option(value="3") 3
 				.month
-					select(name="b_month")
+					select(id="b_month", name="b_month")
 						option(value="1") Enero
 						option(value="2") Febrero
 						option(value="3") Marzo
 				.year 
-					select(name="b_year")
+					select(id="b_year", name="b_year")
 						option(value="2018") 2018
 						option(value="2017") 2017
 						option(value="2016") 2016
 
-			input(type="submit", value="Registrarse")
+			input(id="signup_btn", type="submit", value="Registrarse")
 block head
 	link(rel="stylesheet", href="/stylesheets/css/signup_styles.css")
 
 block out-body
-	script(src="/javascript/ajax.class.js")
-	script.
-		var ajax = new Ajax('users/check');
-		ajax.test();
-
-	if errors
-		script.
-			console.log(#{errors});
+	script(src="/javascript/general.js")
+	script(src="/javascript/signup_scripts.js")
