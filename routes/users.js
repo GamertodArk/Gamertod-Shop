@@ -15,11 +15,13 @@ router.post('/test', (req, res) => {
 
 // register a user
 router.post('/signup', (req, res) => {
-	let data = JSON.parse(req.body.data);
+	// let data = JSON.parse(req.body.data);
+	// console.log(req.body);
 
 
-	for(let val in data){
-		console.log(val);
+	for(let param in req.body){
+		// console.log(data[pa]);
+		req.checkBody(param, 'testting').not().isEmpty();
 	}
 	
 	// Check if the inputs are empty
@@ -55,7 +57,14 @@ router.post('/signup', (req, res) => {
 	// 	req.checkBody(item.input, item.msg).not().isEmpty();
 	// });
 
-	// let errors = req.validationErrors(); 
+	let errors = req.validationErrors(); 
+	if (errors) {
+		res.json({error: true, isEmpty:true, errors});
+		console.log(errors);
+	}else {
+		res.json({error: false});
+		console.log('Not errors');
+	}
 	// if (errors) {
 	// 	// res.status(422).json({errors: errors});
 	// 	res.render('signup', {title: 'Registrate', errors: errors});

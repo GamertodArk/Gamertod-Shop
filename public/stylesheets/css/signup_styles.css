@@ -139,3 +139,6 @@ main form input[type=submit]:hover {
   cursor: pointer;
   color: #b0aaa9;
 }
+main form .label-error {
+  color: red;
+}

@@ -23,13 +23,40 @@ btn.addEventListener('click', (event) => {
 		pass2,
 		country,
 		username,
-		last_name,
-		b_day,
-		b_month,
-		b_year
+		last_name
+		// b_day,
+		// b_month,
+		// b_year
 	}
 
+	// for(item in user_data) {
 
-	let data = `data=${ JSON.stringify(user_data) }`;
-	sendAjax('/users/signup', 'POST', data, response => console.log(response));
+	// }
+
+	let labels = document.getElementsByTagName('label');
+	for (var i = 0; i < labels.length; i++) {
+		labels[i].classList.remove('label-error');
+	}
+
+	// console.log(user_data);
+	
+	let params = `name=${name}&last_name=${last_name}&email=${email}&username=${username}&country=${country}&gender=${gender}&password=${pass1}&password2=${pass2}&b_day=${b_day}&b_month=${b_month}&b_year=${b_year}`;
+	sendAjax('/users/signup', 'POST', params, res => {
+		let data = JSON.parse(res);
+
+		if (data.error) {
+			if (data.isEmpty) {
+				console.log('are empty');
+
+				for (var i = 0; i < data.errors.length; i++) {
+					$(`label[for="${data.errors[i].param}"]`).classList.add('label-error');
+				}
+			}else {
+				console.log('are not empty');
+			}
+		}else {
+			console.log('Success');
+		}
+
+	}, ajaxObject => console.log(ajaxObject.readyState));
 });
