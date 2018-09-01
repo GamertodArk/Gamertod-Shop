@@ -5,6 +5,10 @@ block content
 		form(method="POST", action="")
 			h2 Registrate
 
+			.msg_wrap
+				p Hello World
+				p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
+
 			.full_name
 				.name
 					label(id="name_input", for="name") Nombre

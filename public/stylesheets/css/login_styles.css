@@ -8,6 +8,10 @@ h1, h2, h3, label, p {
   font-family: Roboto, Arial, Helvetica, sans-serif, serif;
 }
 
+@font-face {
+  font-family: "Genericons";
+  src: url(../../fonts/Genericons-Neue.eot), url(../../fonts/Genericons-Neue.ttf), url(../../fonts/Genericons-Neue.woff2);
+}
 footer {
   width: 100%;
   color: #ffffff;

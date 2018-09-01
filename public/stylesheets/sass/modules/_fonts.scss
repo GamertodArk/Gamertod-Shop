@@ -1,0 +1,12 @@
+// Genericons Neue
+
+// The root of this direction is the css/ folder
+$fonts-url: '../../fonts/';
+
+@font-face {
+	font-family: 'Genericons';
+	src: 
+	url(#{$fonts-url}Genericons-Neue.eot),
+	url(#{$fonts-url}Genericons-Neue.ttf),
+	url(#{$fonts-url}Genericons-Neue.woff2);
+} 
