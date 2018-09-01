@@ -154,7 +154,6 @@ main form .msg_wrap {
   text-align: center;
   border-radius: 5px;
   position: relative;
-  border: 1px solid #000;
 }
 main form .msg_wrap #close {
   top: 10px;
@@ -163,7 +162,16 @@ main form .msg_wrap #close {
   position: absolute;
 }
 main form .msg_wrap #close:before {
+  color: #000;
   font-size: 15pt;
   content: "";
   font-family: Genericons;
+}
+main form .msg_error {
+  color: red;
+  border: 1px solid red;
+}
+main form .msg_success {
+  color: green;
+  border: 1px solid green;
 }
