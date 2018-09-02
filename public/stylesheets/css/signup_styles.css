@@ -104,6 +104,8 @@ main form .input {
   width: 100%;
   padding: 5px;
   display: block;
+}
+main form .input_wrap {
   margin-bottom: 1em;
 }
 main form .birth_date > div {
@@ -174,4 +176,7 @@ main form .msg_error {
 main form .msg_success {
   color: green;
   border: 1px solid green;
+}
+main form span[id$=_span] {
+  color: red;
 }

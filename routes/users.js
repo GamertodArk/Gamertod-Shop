@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const validator = require('express-validator');
+const User = require('../models/users-model');
 
 router.get('/login', (req, res) => {
 	res.render('login', {title: 'Iniciar sesion'});
@@ -15,62 +15,55 @@ router.post('/test', (req, res) => {
 
 // register a user
 router.post('/signup', (req, res) => {
-	// let data = JSON.parse(req.body.data);
-	// console.log(req.body);
 
-
+	// Check if the inputs are empty
 	for(let param in req.body){
-		// console.log(data[pa]);
 		req.checkBody(param, 'testting').not().isEmpty();
 	}
 	
-	// Check if the inputs are empty
-	// var inputs = [
-	// 	{
-	// 		input: 'name',
-	// 		msg: {
-	// 			input_id: 'test',
-	// 			class: 'error'
-	// 		}
-	// 	},
-	// 	{
-	// 		input: 'last_name',
-	// 		msg: 'Tienes que escribir un apellido'
-	// 	},
-	// 	{
-	// 		input: 'username',
-	// 		msg: 'Tienes que escribir un nombre de usuario'
-	// 	},
-	// 	{
-	// 		input: 'email',
-	// 		msg: 'Tienes que dar un email'
-	// 	},
-	// 	{
-	// 		input: 'password',
-	// 		msg: 'Tienes que escribir una contraseña'
-	// 	}
-
-	// ];
-
-
-	// inputs.forEach((item, index) => {
-	// 	req.checkBody(item.input, item.msg).not().isEmpty();
-	// });
-
 	let errors = req.validationErrors(); 
 	if (errors) {
 		res.json({error: true, isEmpty:true, errors});
 		console.log(errors);
 	}else {
-		res.json({error: false});
-		console.log('Not errors');
+
+		// Check for the rest of the errors
+		req.checkBody('name', 'El nombre es demasiado corto').isLength({min: 3});
+		req.checkBody('last_name', 'El apellido es demasiado corto').isLength({min: 3});
+		req.checkBody('username', 'El usuario es demasiado corto').isLength({min: 5});
+		req.checkBody('email', 'El email ingresado no es valido').isEmail();
+		req.checkBody('password', 'La contraseña debe tener un minimo de 8 caracteres').isLength({min: 8});
+		req.checkBody('password2', 'Las contraseñas no coinciden').equals(req.body.password);
+
+		let errors2 = req.validationErrors();
+		if (errors2) {
+			console.log('Errors');
+			res.json({error: true, isEmpty: false, errors: errors2});
+		}else {
+			res.json({error: false});
+			
+			// Save the user to the database
+			let newUser = {
+				name: req.body.name,
+				last_name: req.body.last_name,
+				username: req.body.username,
+				email: req.body.email,
+				gender: req.body.gender,
+				country: req.body.country,
+				password: req.body.password,
+				birthday: {
+					b_day: req.body.b_day,
+					b_month: req.body.b_month,
+					b_year: req.body.b_year
+				}
+			}
+
+			User.saveNewUser(newUser, () => {
+				console.log('User saved');
+			});
+		}
 	}
-	// if (errors) {
-	// 	// res.status(422).json({errors: errors});
-	// 	res.render('signup', {title: 'Registrate', errors: errors});
-	// }else {
-	// 	res.send('Hello world');
-	// }
+
 });
 
 module.exports = router;

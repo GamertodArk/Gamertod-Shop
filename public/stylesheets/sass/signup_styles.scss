@@ -40,6 +40,9 @@ main {
 			width: 100%;
 			padding: 5px;
 			display: block;
+		}
+
+		.input_wrap {
 			margin-bottom: 1em;
 		}
 
@@ -97,5 +100,15 @@ main {
 			color: green;
 			border: 1px solid green;			
 		}
+
+		
+		span[id$="_span"] {
+			color: red;
+		}
+
+		// .span_error {
+		// 	color: red;
+		// 	line-height: 1.5em;
+		// }
 	}
 }

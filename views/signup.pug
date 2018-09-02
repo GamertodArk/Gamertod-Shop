@@ -2,45 +2,54 @@ extends layout
 
 block content
 	main
-		form(method="POST", action="")
+		form(method="POST", action="", id="signup_form")
 			h2 Registrate
-
-			.msg_wrap.msg_success
-				p Hello World
-				p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
 
 			.full_name
 				.name
 					label(id="name_input", for="name") Nombre
 					input(type="text", name="name", id="name", placeholder="Nombre")
+					span#name_span
 
 				.last_name
 					label(id="lastName_input", for="last_name") Apellido
 					input(type="text", name="last_name", id="last_name", placeholder="Apellido")
-			
-			label(for="username") Usuario
-			input(type="text", class="input", name="username", id="username", placeholder="Usuario")
+					span#last_name_span
+
+			.username.input_wrap
+				label(for="username") Usuario
+				input(type="text", class="input", name="username", id="username", placeholder="Usuario")
+				span#username_span
+				
+
+			.email.input_wrap
+				label(for="email") Email
+				input(type="email", class="input", name="email", id="email", placeholder="Email")
+				span#email_span
 
 
-			label(for="email") Email
-			input(type="email", class="input", name="email", id="email", placeholder="Email")
+			.password.input_wrap
+				label(for="password") Contraseña
+				input(type="password", class="input", name="password", id="password", placeholder="Contraseña")
+				span#password_span
 
-			label(for="password") Contraseña
-			input(type="password", class="input", name="password", id="password", placeholder="Contraseña")
+			.password2.input_wrap
+				label(for="password2") Repita su contraseña
+				input(type="password", class="input", name="password2", id="password2", placeholder="Repita su contraseña")
+				span#password2_span
 
-			label(for="password2") Repita su contraseña
-			input(type="password", class="input", name="password2", id="password2", placeholder="Repita su contraseña")
+			.contry.input_wrap
+				label(for="country") Pais de recidencia
+				select(class="input" ,name="country", id="country")
+					option(value="") Seleciona un pais
+					option(value="Venezuela") Venezuela
+					option(value="Colombia") Colombia
 
-			label(for="country") Pais de recidencia
-			select(class="input" ,name="country", id="country")
-				option(value="") Seleciona un pais
-				option(value="Venezuela") Venezuela
-				option(value="Colombia") Colombia
-
-			label(for="gender") Genero
-			select(class="input", name="gender", id="gender")
-				option(value="Mujer") Mujer
-				option(value="Hombre") Hombre
+			.gender.input_wrap
+				label(for="gender") Genero
+				select(class="input", name="gender", id="gender")
+					option(value="Mujer") Mujer
+					option(value="Hombre") Hombre
 
 			label(for="") Fecha de nacimiento
 			.birth_date

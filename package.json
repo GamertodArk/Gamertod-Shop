@@ -11,11 +11,13 @@
   "author": "Elvis Garcia",
   "license": "ISC",
   "dependencies": {
-    "pug": "*",
-    "express": "*",
+    "bcryptjs": "^2.4.3",
     "body-parser": "*",
-    "cookie-parser": "*",
     "connect-flash": "*",
-    "express-validator": "*"
+    "cookie-parser": "*",
+    "express": "*",
+    "express-validator": "*",
+    "mongoose": "^5.2.12",
+    "pug": "*"
   }
 }
