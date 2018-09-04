@@ -40,26 +40,56 @@ router.post('/signup', (req, res) => {
 			console.log('Errors');
 			res.json({error: true, isEmpty: false, errors: errors2});
 		}else {
-			res.json({error: false});
 			
-			// Save the user to the database
-			let newUser = {
-				name: req.body.name,
-				last_name: req.body.last_name,
-				username: req.body.username,
-				email: req.body.email,
-				gender: req.body.gender,
-				country: req.body.country,
-				password: req.body.password,
-				birthday: {
-					b_day: req.body.b_day,
-					b_month: req.body.b_month,
-					b_year: req.body.b_year
-				}
-			}
 
-			User.saveNewUser(newUser, () => {
-				console.log('User saved');
+
+			User.checkUsedData(req.body.username, req.body.email, (err, docs) => {
+				if (err) {console.log(err);}
+
+				// The data in not in used
+				if (!docs) {
+
+					// Organazing all the user data
+					let newUser = {
+						name: req.body.name,
+						last_name: req.body.last_name,
+						email: req.body.email.toLowerCase(),
+						gender: req.body.gender,
+						country: req.body.country,
+						password: req.body.password,
+						birthday: {
+							b_day: req.body.b_day,
+							b_month: req.body.b_month,
+							b_year: req.body.b_year
+						},
+						
+						username: req.body.username,
+						lower_username: req.body.username.toLowerCase()
+					}
+
+					// Save the user to the database
+					User.saveNewUser(newUser, () => {
+						console.log('User saved');
+					});
+
+
+				}else {
+					let json = {
+						error: true,
+						isEmpty: false,
+						errors: [
+							{
+								param: 'username',
+								msg: 'El email o el usuario ya estan en uso'
+							},
+							{
+								param: 'email',
+								msg: 'El email o el usuario ya estan en uso'								
+							}
+						]
+					}
+					res.json(json);
+				}
 			});
 		}
 	}

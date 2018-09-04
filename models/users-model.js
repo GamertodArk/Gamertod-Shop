@@ -9,7 +9,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/gamertod_shop', {useNewUrlParser: tr
 let user_Schema = new Schema({
 	name: String,
 	last_name: String,
-	username: String,
 	email: String,
 	gender: String,
 	country: String,
@@ -18,7 +17,9 @@ let user_Schema = new Schema({
 		b_day: String,
 		b_month: String,
 		b_year: String
-	}
+	},
+	username: String,
+	lower_username: String
 });
 
 const User = module.exports = mongoose.model('user', user_Schema);
@@ -31,3 +32,18 @@ module.exports.saveNewUser = (newUser, callback) => {
 		});
 	});
 } 
+
+module.exports.findByUsername = (userName, callback) => {
+	User.findOne({lower_username: userName.toLowerCase()}, (err, docs) => {
+		callback(err, docs);
+	});
+}
+
+module.exports.checkUsedData = (username, email, callback) => {
+	User.findOne({
+		$or: [
+			{lower_username: username.toLowerCase()}, 
+			{email: email.toLowerCase()}
+		]
+	}, (err, docs) => callback(err, docs));
+}
