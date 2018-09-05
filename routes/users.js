@@ -1,5 +1,7 @@
+const passport = require('passport');
 const router = require('express').Router();
 const User = require('../models/users-model');
+const passportSetup = require('../login_conf/passport-conf');
 
 router.get('/login', (req, res) => {
 	res.render('login', {title: 'Iniciar sesion'});
@@ -9,8 +11,12 @@ router.get('/signup', (req, res) => {
 	res.render('signup', {title: 'Registrate'});
 });
 
-router.post('/test', (req, res) => {
-	res.send(req.body.name);
+
+// Login a user
+router.post('/login',
+	passport.authenticate('local', {failureRedirect: '/users/login'}),
+	(req, res) => {
+	res.send('Hello world');
 });
 
 // register a user
@@ -70,6 +76,7 @@ router.post('/signup', (req, res) => {
 					// Save the user to the database
 					User.saveNewUser(newUser, () => {
 						console.log('User saved');
+						res.json({error: false});
 					});
 
 

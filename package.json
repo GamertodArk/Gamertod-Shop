@@ -18,6 +18,9 @@
     "express": "*",
     "express-validator": "*",
     "mongoose": "^5.2.12",
-    "pug": "*"
+    "pug": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "cookie-session": "*"
   }
 }
