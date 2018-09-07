@@ -80,6 +80,7 @@ btn.addEventListener('click', (event) => {
 			}
 		}else {
 			console.log('Success');
+			window.location = '/users/login';
 		}
 
 	}, ajaxObject => console.log(ajaxObject.readyState));	

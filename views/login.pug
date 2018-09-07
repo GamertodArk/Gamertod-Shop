@@ -5,6 +5,17 @@ block content
 		form(method="POST")
 			h2 Inicia Sesion
 
+			if failure
+				.msg_wrap.msg_error
+					p #{failure}
+					p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
+
+			if success
+				.msg_wrap.msg_success
+					p #{success}
+					p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
+
+
 			label(for="email") Email:
 			input(type="text", id="email", name="email", placeholder="Email")
 

@@ -4,19 +4,24 @@ const User = require('../models/users-model');
 const passportSetup = require('../login_conf/passport-conf');
 
 router.get('/login', (req, res) => {
-	res.render('login', {title: 'Iniciar sesion'});
+	res.render('login', {title: 'Iniciar sesion', failure: req.flash('error')[0], success: req.flash('singup_success')[0]});
 });
 
 router.get('/signup', (req, res) => {
 	res.render('signup', {title: 'Registrate'});
 });
 
+// Logout a user
+router.get('/logout', (req, res) => {
+	req.logout();
+	res.redirect('/');
+});
 
 // Login a user
 router.post('/login',
-	passport.authenticate('local', {failureRedirect: '/users/login'}),
+	passport.authenticate('local', {failureRedirect: '/users/login', failureFlash: true}),
 	(req, res) => {
-	res.send('Hello world');
+	res.redirect('/members');
 });
 
 // register a user
@@ -75,9 +80,13 @@ router.post('/signup', (req, res) => {
 
 					// Save the user to the database
 					User.saveNewUser(newUser, () => {
-						console.log('User saved');
+						req.flash('singup_success', 'Te has registrado excitosamente y ya puedes iniciar sesion');
 						res.json({error: false});
 					});
+
+					// req.flash('singup_success', 'Te has registrado excitosamente y ya puedes iniciar sesion');
+					// res.json({error: false});
+
 
 
 				}else {

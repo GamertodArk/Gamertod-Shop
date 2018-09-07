@@ -33,11 +33,24 @@ module.exports.saveNewUser = (newUser, callback) => {
 	});
 } 
 
+module.exports.findUserById = (id, callback) => {
+	User.findById({_id: id}, (err, docs) => {
+		callback(err, docs);
+	});
+}
+
 module.exports.findByUsername = (userName, callback) => {
 	User.findOne({lower_username: userName.toLowerCase()}, (err, docs) => {
 		callback(err, docs);
 	});
 }
+
+module.exports.findByEmail = (email, callback) => {
+	User.findOne({email: email.toLowerCase()}, (err, docs) => {
+		callback(err, docs);
+	});
+}
+
 
 module.exports.checkUsedData = (username, email, callback) => {
 	User.findOne({
@@ -46,4 +59,10 @@ module.exports.checkUsedData = (username, email, callback) => {
 			{email: email.toLowerCase()}
 		]
 	}, (err, docs) => callback(err, docs));
+}
+
+module.exports.comparePasswords = (password, hash, callback) => {
+	bcrypt.compare(password, hash, (err, res) => {
+		callback(err, res);
+	});
 }
