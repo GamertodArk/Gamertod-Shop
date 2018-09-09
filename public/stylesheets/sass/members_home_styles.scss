@@ -1,0 +1,47 @@
+
+@import "partials/base";
+
+main {
+	width: 100%;
+	background-color: #f2f2f2;
+
+	.wrap {
+		width: 95%;
+		margin: auto;
+
+		.item_section{
+			padding: 2em;
+
+			h2 {
+				color: #555568;
+				margin: 1em 0px;
+			}
+
+			hr {
+				color: #dddddd;
+			}
+
+			.items {
+				@include center-flex;
+				justify-content: space-between;
+
+				.item {
+					padding: 1em;
+					display: flex;
+					flex-grow: 1;
+					flex-direction: column;
+
+					img {
+						width: 80%;
+						display: block;
+						margin: 0.5em auto;
+					}
+
+					.description {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}

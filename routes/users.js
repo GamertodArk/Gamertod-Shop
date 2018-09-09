@@ -84,11 +84,6 @@ router.post('/signup', (req, res) => {
 						res.json({error: false});
 					});
 
-					// req.flash('singup_success', 'Te has registrado excitosamente y ya puedes iniciar sesion');
-					// res.json({error: false});
-
-
-
 				}else {
 					let json = {
 						error: true,
