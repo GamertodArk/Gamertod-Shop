@@ -11,14 +11,36 @@ body
 			nav 
 				.logo
 					a(href="/") Gamertod
-				.menu
-					a(href="/") Home
-					a(href="#") Link #2
-					a(href="#") Link #3
-				.login
-					a(href="/users/login") Log in
-					a(href="/users/signup") Sign Up
-					
+
+				if username
+
+					.searchBar
+						form(action="", method="GET")
+							input(type="text", name="search")
+
+					.username
+						//- a(href="#") #{username}
+						ul
+							li
+								a(href="#") #{username}
+
+								ul.childrem
+									li
+										a(href="#") Link #1
+									li
+										a(href="#") Link #2
+									li
+										a(href="#") Link #3
+
+				else 
+					.menu
+						a(href="/") Home
+						a(href="#") Link #2
+						a(href="#") Link #3
+					.login
+						a(href="/users/login") Log in
+						a(href="/users/signup") Sign Up
+
 		block header
 
 	block content

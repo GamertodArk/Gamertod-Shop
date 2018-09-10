@@ -3,18 +3,18 @@ const router = require('express').Router();
 const User = require('../models/users-model');
 const passportSetup = require('../login_conf/passport-conf');
 
+// If the user is alredy logged in, redirect him to the members section
+router.use((req, res, next) => {
+	if (req.user) { res.redirect('/members'); }
+	else {next();}
+});
+
 router.get('/login', (req, res) => {
 	res.render('login', {title: 'Iniciar sesion', failure: req.flash('error')[0], success: req.flash('singup_success')[0]});
 });
 
 router.get('/signup', (req, res) => {
 	res.render('signup', {title: 'Registrate'});
-});
-
-// Logout a user
-router.get('/logout', (req, res) => {
-	req.logout();
-	res.redirect('/');
 });
 
 // Login a user

@@ -66,6 +66,29 @@ footer {
 .navigation_menu nav .login a:hover {
   color: #b0aaa9;
 }
+.navigation_menu nav .username ul {
+  list-style: none;
+}
+.navigation_menu nav .username ul li {
+  position: relative;
+}
+.navigation_menu nav .username ul li .childrem {
+  width: 120%;
+  color: #fff;
+  right: 0;
+  padding: 0.5em;
+  position: absolute;
+  background-color: #2f2e2e;
+}
+.navigation_menu nav .username ul li .childrem li {
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  line-height: 1em;
+}
+.navigation_menu nav .username ul li .childrem li:nth-last-child(1) {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
 
 .msg_wrap {
   width: 90%;

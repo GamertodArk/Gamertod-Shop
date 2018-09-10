@@ -30,5 +30,37 @@
 				color: #b0aaa9;
 			}
 		}
+
+		.username {
+			ul{
+				list-style: none;
+
+				li {
+					position: relative;
+
+					.childrem {
+						width: 120%;
+						color: #fff;
+						// left: 0;
+						right: 0;
+						padding: 0.5em;
+						position: absolute;
+						background-color: #2f2e2e;
+						// background-color: rgba(0,0,0, 0.75);
+
+						li {
+							margin-bottom: 1em;
+							border-bottom: 1px solid rgba(255,255,255, 0.80);
+							line-height: 1em;
+
+							&:nth-last-child(1) {
+								margin-bottom: 0px;
+								border-bottom: none;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
