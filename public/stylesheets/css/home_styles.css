@@ -101,6 +101,42 @@ footer {
   border-bottom: none;
   padding-bottom: 0px;
 }
+.navigation_menu nav .username ul li .childrem li a {
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  -o-transition-delay: 0.1s;
+  -o-transition-duration: 0.2s;
+  -o-transition-property: color;
+  -o-transition-timing-function: ease-out;
+  -moz-transition-delay: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -moz-transition-property: color;
+  -moz-transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.1s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: color;
+  -webkit-transition-timing-function: ease-out;
+}
+.navigation_menu nav .username ul li .childrem li a:hover {
+  color: #b0aaa9;
+}
+.navigation_menu nav .searchBar {
+  width: 60%;
+}
+.navigation_menu nav .searchBar form {
+  width: 100%;
+}
+.navigation_menu nav .searchBar form input[type=text] {
+  width: 90%;
+  padding: 5px;
+}
+.navigation_menu nav .searchBar form input[type=submit] {
+  width: 10%;
+  padding: 5px;
+  display: inline-block;
+}
 
 .msg_wrap {
   width: 90%;

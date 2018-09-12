@@ -16,21 +16,22 @@ body
 
 					.searchBar
 						form(action="", method="GET")
-							input(type="text", name="search")
+							input(type="text", name="search", placeholder="Buscar")
+							input(type="submit", value="Buscar")
 
 					.username
-						//- a(href="#") #{username}
+
 						ul
 							li.parent
 								a(href="#") #{username}
 
 								ul.childrem
 									li
-										a(href="#") Perfil
+										a(href="/members/profile/" + username) Perfil
 									li
 										a(href="#") Link #2
 									li
-										a(href="#") Cerrar session
+										a(href="/members/logout") Cerrar session
 
 				else 
 					.menu

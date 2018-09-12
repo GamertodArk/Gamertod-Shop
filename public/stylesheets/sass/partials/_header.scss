@@ -72,8 +72,41 @@
 								border-bottom: none;
 								padding-bottom: 0px;
 							}
+
+							a {
+								@include transition(0.2s, color, ease-out, 0.1s);
+
+								&:hover {
+									color: #b0aaa9;
+								}
+							}
 						}
 					}
+				}
+			}
+		}
+
+		.searchBar {
+			width: 60%;
+			form {
+				width: 100%;
+
+				input[type=text] {
+					width: 90%;
+					padding: 5px;
+				}
+
+				input[type=submit] {
+					width: 10%;
+					padding: 5px;
+					display: inline-block;
+
+					// &:before {
+					// 	font-family: Genericons;
+					// 	content:"\f400";
+					// 	color: #fff;
+						
+					// }
 				}
 			}
 		}
