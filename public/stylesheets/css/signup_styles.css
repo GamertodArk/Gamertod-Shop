@@ -69,25 +69,37 @@ footer {
 .navigation_menu nav .username ul {
   list-style: none;
 }
+.navigation_menu nav .username ul li.parent {
+  padding: 1em 2em;
+}
 .navigation_menu nav .username ul li {
   position: relative;
 }
+.navigation_menu nav .username ul li:hover .childrem {
+  display: block;
+}
 .navigation_menu nav .username ul li .childrem {
-  width: 120%;
+  width: 150%;
   color: #fff;
-  right: 0;
+  right: -25%;
+  display: none;
   padding: 0.5em;
+  margin-top: 0.3em;
   position: absolute;
-  background-color: #2f2e2e;
+  border-radius: 5px;
+  background-color: #403f3f;
 }
 .navigation_menu nav .username ul li .childrem li {
-  margin-bottom: 1em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  font-size: 11pt;
   line-height: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 .navigation_menu nav .username ul li .childrem li:nth-last-child(1) {
-  margin-bottom: 0px;
   border-bottom: none;
+  padding-bottom: 0px;
 }
 
 .msg_wrap {
