@@ -19,19 +19,40 @@ body
 							input(type="text", name="search", placeholder="Buscar")
 							input(type="submit", value="Buscar")
 
-					.username
+					.right-side
+						.notification
+							ul.notification-list
+								li.messages
+									.msg-child
+										.notify
+											img(src="/images/google-home.jpg", alt="")
 
-						ul
-							li.parent
-								a(href="#") #{username}
+											p.msg This is the message
 
-								ul.childrem
-									li
-										a(href="/members/profile/" + username) Perfil
-									li
-										a(href="#") Link #2
-									li
-										a(href="/members/logout") Cerrar session
+											p#close
+
+										.notify
+											img(src="/images/google-home.jpg", alt="")
+
+											p.msg This is the message
+
+											p#close
+
+								li.noti
+
+						.username
+
+							ul
+								li.parent
+									a(href="#") #{username}
+
+									ul.childrem
+										li
+											a(href="/members/profile/" + username) Perfil
+										li
+											a(href="#") Publicar Productos
+										li
+											a(href="/members/logout") Cerrar session
 
 				else 
 					.menu

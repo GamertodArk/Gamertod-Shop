@@ -66,42 +66,24 @@ footer {
 .navigation_menu nav .login a:hover {
   color: #b0aaa9;
 }
-.navigation_menu nav .username ul {
-  list-style: none;
+.navigation_menu nav .right-side {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
-.navigation_menu nav .username ul li.parent {
-  padding: 1em 2em;
-}
-.navigation_menu nav .username ul li {
-  position: relative;
-}
-.navigation_menu nav .username ul li:hover .childrem {
-  display: block;
-}
-.navigation_menu nav .username ul li .childrem {
-  width: 150%;
+.navigation_menu nav .right-side .notification ul {
+  width: 100%;
   color: #fff;
-  right: -25%;
-  display: none;
-  padding: 0.5em;
-  margin-top: 0.3em;
-  position: absolute;
-  border-radius: 5px;
-  background-color: #403f3f;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
-.navigation_menu nav .username ul li .childrem li {
-  font-size: 11pt;
-  line-height: 1em;
-  margin-bottom: 1em;
-  text-align: center;
-  padding-bottom: 1em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+.navigation_menu nav .right-side .notification ul li {
+  margin: 0px 0.5em;
 }
-.navigation_menu nav .username ul li .childrem li:nth-last-child(1) {
-  border-bottom: none;
-  padding-bottom: 0px;
-}
-.navigation_menu nav .username ul li .childrem li a {
+.navigation_menu nav .right-side .notification ul li.messages {
+  position: relative;
   transition-delay: 0.1s;
   transition-duration: 0.2s;
   transition-property: color;
@@ -119,7 +101,106 @@ footer {
   -webkit-transition-property: color;
   -webkit-transition-timing-function: ease-out;
 }
-.navigation_menu nav .username ul li .childrem li a:hover {
+.navigation_menu nav .right-side .notification ul li.messages:hover {
+  color: #b0aaa9;
+}
+.navigation_menu nav .right-side .notification ul li.messages:before {
+  font-size: 20pt;
+  content: "";
+  font-family: Genericons;
+}
+.navigation_menu nav .right-side .notification ul li.messages .msg-child {
+  right: 0px;
+  width: 200%;
+  padding: 1em;
+  color: #1c3643;
+  min-width: 400px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 5px 10px 18px #888888;
+  -moz-box-shadow: 5px 10px 18px #888888;
+  -webkit-box-shadow: 5px 10px 18px #888888;
+}
+.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify {
+  margin: 1em 0px;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  justify-content: space-between;
+}
+.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify img {
+  width: 50px;
+}
+.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify p.msg {
+  margin: 0px 1em;
+  text-align: center;
+}
+.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify p#close:before {
+  color: #000;
+  padding: 5px;
+  font-size: 15pt;
+  content: "";
+  border-radius: 100%;
+  border: 1px solid #000;
+  font-family: Genericons;
+}
+.navigation_menu nav .right-side .username ul {
+  list-style: none;
+}
+.navigation_menu nav .right-side .username ul li.parent {
+  padding: 1em 2em;
+}
+.navigation_menu nav .right-side .username ul li {
+  position: relative;
+}
+.navigation_menu nav .right-side .username ul li:hover .childrem {
+  display: block;
+}
+.navigation_menu nav .right-side .username ul li .childrem {
+  width: 150%;
+  color: #fff;
+  right: -25%;
+  display: none;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #403f3f;
+}
+.navigation_menu nav .right-side .username ul li .childrem li {
+  font-size: 11pt;
+  line-height: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+.navigation_menu nav .right-side .username ul li .childrem li:nth-last-child(1) {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+.navigation_menu nav .right-side .username ul li .childrem li a {
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  -o-transition-delay: 0.1s;
+  -o-transition-duration: 0.2s;
+  -o-transition-property: color;
+  -o-transition-timing-function: ease-out;
+  -moz-transition-delay: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -moz-transition-property: color;
+  -moz-transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.1s;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-property: color;
+  -webkit-transition-timing-function: ease-out;
+}
+.navigation_menu nav .right-side .username ul li .childrem li a:hover {
   color: #b0aaa9;
 }
 .navigation_menu nav .searchBar {

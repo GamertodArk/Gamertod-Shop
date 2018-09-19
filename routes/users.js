@@ -10,11 +10,11 @@ router.use((req, res, next) => {
 });
 
 router.get('/login', (req, res) => {
-	res.render('login', {title: 'Iniciar sesion', failure: req.flash('error')[0], success: req.flash('singup_success')[0]});
+	res.render('guests/login', {title: 'Iniciar sesion', failure: req.flash('error')[0], success: req.flash('singup_success')[0]});
 });
 
 router.get('/signup', (req, res) => {
-	res.render('signup', {title: 'Registrate'});
+	res.render('guests/signup', {title: 'Registrate'});
 });
 
 // Login a user

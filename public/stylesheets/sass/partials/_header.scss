@@ -24,61 +24,141 @@
 		.login a {
 			padding: 10px;
 			text-transform: uppercase;
-			@include transition(0.2s, color, ease-out, 0.1s);
-
-			&:hover {
-				color: #b0aaa9;
-			}
+			
+			@include smooth-dark();
 		}
 
-		.username {
-			ul{
-				list-style: none;
+		.right-side {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
 
+			.notification {
+				ul {
+					width: 100%;
+					color: #fff;
+					list-style: none;
+		
+					display: flex;
+					align-items: center;
+					flex-direction: row;
 
-				li.parent {
-					padding: 1em 2em;
-				}
+					li {
+						margin: 0px 0.5em;
+					}
 
-				li {
-					position: relative;
+					// .messages,
+					// .noti {
+					// 	@include smooth-dark();
+					
+					// 	&:before {
+					// 		font-size: 20pt;
+					// 		font-family: Genericons;							
+					// 	}
+					// }
+					
+					// .messages:before{ content:"\f410"; }	
+					
+					// .noti:before { content:"\f456"; }
 
-					&:hover {
-						.childrem {
-							display: block;
+					
+
+					li.messages {
+						position: relative;
+						@include smooth-dark();
+
+						&:before {
+							font-size: 20pt;
+							content:"\f410";
+							font-family: Genericons;														
+						}
+
+						.msg-child {
+							right: 0px;
+							width: 200%;
+							padding: 1em;
+							color: #1c3643;
+							min-width: 400px;
+							position: absolute;
+							background-color: #fff;
+							@include box-shadow(5px 10px 18px #888888);
+
+							.notify {
+								margin: 1em 0px;
+								padding: 0.5em 2em;
+								border-radius: 5px;
+								@include center-flex;
+								background-color: #f2f2f2;
+								justify-content: space-between;
+
+								img {
+									width: 50px;
+								}
+
+								p.msg {
+									margin: 0px 1em;
+									text-align: center;
+								}
+
+								p#close:before {
+									color: #000;
+									padding: 5px;
+									font-size: 15pt;
+									content: '\f405';
+									border-radius: 100%;
+									border: 1px solid #000;
+									font-family: Genericons;
+								}
+							}
 						}
 					}
 
-					.childrem {
-						width: 150%;
-						color: #fff;
-						right: -25%;
-						display: none;
-						padding: 0.5em;
-						margin-top: 0.3em;
-						position: absolute;
-						border-radius: 5px;
-						background-color: #403f3f;
+				}
+			}
 
-						li {
-							font-size: 11pt;
-							line-height: 1em;
-							margin-bottom: 1em;
-							text-align: center;
-							padding-bottom: 1em;
-							border-bottom: 1px solid rgba(255,255,255, 0.80);
+			.username {
+				ul{
+					list-style: none;
 
-							&:nth-last-child(1) {
-								border-bottom: none;
-								padding-bottom: 0px;
+
+					li.parent {
+						padding: 1em 2em;
+					}
+
+					li {
+						position: relative;
+
+						&:hover {
+							.childrem {
+								display: block;
 							}
+						}
 
-							a {
-								@include transition(0.2s, color, ease-out, 0.1s);
+						.childrem {
+							width: 150%;
+							color: #fff;
+							right: -25%;
+							display: none;
+							padding: 0.5em;
+							margin-top: 0.3em;
+							position: absolute;
+							border-radius: 5px;
+							background-color: #403f3f;
 
-								&:hover {
-									color: #b0aaa9;
+							li {
+								font-size: 11pt;
+								line-height: 1em;
+								margin-bottom: 1em;
+								text-align: center;
+								padding-bottom: 1em;
+								border-bottom: 1px solid rgba(255,255,255, 0.80);
+
+								&:nth-last-child(1) {
+									border-bottom: none;
+									padding-bottom: 0px;
 								}
+
+								a { @include smooth-dark(); }
 							}
 						}
 					}
@@ -100,13 +180,6 @@
 					width: 10%;
 					padding: 5px;
 					display: inline-block;
-
-					// &:before {
-					// 	font-family: Genericons;
-					// 	content:"\f400";
-					// 	color: #fff;
-						
-					// }
 				}
 			}
 		}

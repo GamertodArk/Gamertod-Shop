@@ -5,6 +5,13 @@
 	justify-content: center;
 }
 
+// Add a box shadow
+@mixin box-shadow($value) {
+	box-shadow: $value;
+	-moz-box-shadow: $value;
+	-webkit-box-shadow: $value;
+}
+
 // Transition
 @mixin transition($duration, $property, $timing_function, $delay) {
 	transition-delay: $delay;
@@ -43,5 +50,14 @@
 	&:hover {
 		cursor: pointer;
 		color: $btn_1_hover_font;
+	}
+}
+
+// Add a smooth animation to the color atribute
+@mixin smooth-dark {
+	@include transition(0.2s, color, ease-out, 0.1s);
+
+	&:hover {
+		color: $dark_white;
 	}
 }
