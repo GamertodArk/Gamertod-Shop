@@ -82,37 +82,45 @@ footer {
 .navigation_menu nav .right-side .notification ul li {
   margin: 0px 0.5em;
 }
-.navigation_menu nav .right-side .notification ul li.messages {
-  position: relative;
-  transition-delay: 0.1s;
-  transition-duration: 0.2s;
-  transition-property: color;
-  transition-timing-function: ease-out;
-  -o-transition-delay: 0.1s;
-  -o-transition-duration: 0.2s;
-  -o-transition-property: color;
-  -o-transition-timing-function: ease-out;
-  -moz-transition-delay: 0.1s;
-  -moz-transition-duration: 0.2s;
-  -moz-transition-property: color;
-  -moz-transition-timing-function: ease-out;
-  -webkit-transition-delay: 0.1s;
-  -webkit-transition-duration: 0.2s;
-  -webkit-transition-property: color;
-  -webkit-transition-timing-function: ease-out;
-}
-.navigation_menu nav .right-side .notification ul li.messages:hover {
-  color: #b0aaa9;
-}
-.navigation_menu nav .right-side .notification ul li.messages:before {
-  font-size: 20pt;
+.navigation_menu nav .right-side .notification ul .messages:before {
   content: "";
+}
+.navigation_menu nav .right-side .notification ul .noti:before {
+  content: "";
+}
+.navigation_menu nav .right-side .notification ul li.messages,
+.navigation_menu nav .right-side .notification ul li.noti {
+  padding: 1em;
+  position: relative;
+}
+.navigation_menu nav .right-side .notification ul li.messages:hover div[class$=-child],
+.navigation_menu nav .right-side .notification ul li.noti:hover div[class$=-child] {
+  display: block;
+}
+.navigation_menu nav .right-side .notification ul li.messages:before,
+.navigation_menu nav .right-side .notification ul li.noti:before {
+  font-size: 20pt;
   font-family: Genericons;
 }
-.navigation_menu nav .right-side .notification ul li.messages .msg-child {
+.navigation_menu nav .right-side .notification ul li.messages .noti-indicator,
+.navigation_menu nav .right-side .notification ul li.noti .noti-indicator {
+  top: 0px;
+  right: 0px;
+  width: 1.3em;
+  height: 1.3em;
+  position: absolute;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+.navigation_menu nav .right-side .notification ul li.messages div[class$=-child],
+.navigation_menu nav .right-side .notification ul li.noti div[class$=-child] {
   right: 0px;
   width: 200%;
   padding: 1em;
+  display: none;
   color: #1c3643;
   min-width: 400px;
   position: absolute;
@@ -121,7 +129,8 @@ footer {
   -moz-box-shadow: 5px 10px 18px #888888;
   -webkit-box-shadow: 5px 10px 18px #888888;
 }
-.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify {
+.navigation_menu nav .right-side .notification ul li.messages div[class$=-child] .notify,
+.navigation_menu nav .right-side .notification ul li.noti div[class$=-child] .notify {
   margin: 1em 0px;
   padding: 0.5em 2em;
   border-radius: 5px;
@@ -131,21 +140,46 @@ footer {
   background-color: #f2f2f2;
   justify-content: space-between;
 }
-.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify img {
+.navigation_menu nav .right-side .notification ul li.messages div[class$=-child] .notify img,
+.navigation_menu nav .right-side .notification ul li.noti div[class$=-child] .notify img {
   width: 50px;
 }
-.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify p.msg {
+.navigation_menu nav .right-side .notification ul li.messages div[class$=-child] .notify p.msg,
+.navigation_menu nav .right-side .notification ul li.noti div[class$=-child] .notify p.msg {
   margin: 0px 1em;
   text-align: center;
 }
-.navigation_menu nav .right-side .notification ul li.messages .msg-child .notify p#close:before {
-  color: #000;
+.navigation_menu nav .right-side .notification ul li.messages div[class$=-child] .notify p#close:before,
+.navigation_menu nav .right-side .notification ul li.noti div[class$=-child] .notify p#close:before {
   padding: 5px;
+  color: #2f2e2e;
   font-size: 15pt;
+  cursor: pointer;
   content: "";
   border-radius: 100%;
   border: 1px solid #000;
   font-family: Genericons;
+  transition-delay: 0.1s;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  -o-transition-delay: 0.1s;
+  -o-transition-duration: 0.3s;
+  -o-transition-property: background-color;
+  -o-transition-timing-function: ease-out;
+  -moz-transition-delay: 0.1s;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-property: background-color;
+  -moz-transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.1s;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: background-color;
+  -webkit-transition-timing-function: ease-out;
+}
+.navigation_menu nav .right-side .notification ul li.messages div[class$=-child] .notify p#close:hover:before,
+.navigation_menu nav .right-side .notification ul li.noti div[class$=-child] .notify p#close:hover:before {
+  color: #f2f2f2;
+  background-color: #2f2e2e;
 }
 .navigation_menu nav .right-side .username ul {
   list-style: none;

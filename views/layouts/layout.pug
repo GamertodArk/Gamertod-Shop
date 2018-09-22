@@ -23,22 +23,35 @@ body
 						.notification
 							ul.notification-list
 								li.messages
+
+									span.noti-indicator 1
+
 									.msg-child
 										.notify
 											img(src="/images/google-home.jpg", alt="")
 
 											p.msg This is the message
 
-											p#close
+											p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
 
 										.notify
 											img(src="/images/google-home.jpg", alt="")
 
 											p.msg This is the message
 
-											p#close
+											p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
 
 								li.noti
+
+									span.noti-indicator 1
+
+									.noti-child
+										.notify
+											img(src="/images/google-home.jpg", alt="")
+
+											p.msg This is the Notification
+
+											p#close(onclick="this.parentNode.parentNode.removeChild(this.parentNode)")
 
 						.username
 
